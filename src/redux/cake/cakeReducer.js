@@ -1,19 +1,20 @@
 import { BUY_CAKE } from "./cakeTypes"
 
 const INITIAL_STATE = {
-    numberOfCakes : 10
+    numberOfCakes: 10
 }
 
-const cakeReducer = (state = INITIAL_STATE,action) => { 
-    switch(action.type) {
-        case BUY_CAKE :
+const cakeReducer = (state = INITIAL_STATE,action) => {
+    switch(action.type){
+        case BUY_CAKE: {
             return {
                 ...state,
-                numberOfCakes: state.numberOfCakes - 1
+                numberOfCakes: state.numberOfCakes- action.payload
             }
-        default : 
+        }
+        default: 
             return state
     }
 }
 
-export default cakeReducer;
+export default cakeReducer 
